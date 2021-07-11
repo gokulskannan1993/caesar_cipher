@@ -12,5 +12,5 @@ key = int(input("Enter the shift number:"))
 
 
 # Switch operations according to User input 
-print(caesar_cipher(operation, text, key))
+caesar_cipher(operation, text, key)
 
