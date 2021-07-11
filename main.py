@@ -1,4 +1,3 @@
-from resources import alphabet
 
 
 # Asking for user inputs
