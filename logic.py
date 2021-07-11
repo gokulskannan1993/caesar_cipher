@@ -4,12 +4,12 @@ from resources import alphabet
 # Caesar Cipher Method for encoding and decoding
 def caesar_cipher(operation, text, key):
     answer = ""
+
+    if operation == 'decode':
+        key *= -1
+
     for letter in text:
         position = alphabet.index(letter)
-
-        if operation == 'decode':
-            key *= -1
-
         shifted_position =  position + key 
 
         new_letter = alphabet[shifted_position]
