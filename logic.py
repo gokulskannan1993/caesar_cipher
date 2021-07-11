@@ -1,31 +1,23 @@
 from resources import alphabet
 
-# Method to encrypt the message with key
-def encrypt(message, key):
-    cipher = ""
-
-    for letter in message:
+# Caesar Cipher in one Method
+def caesar_cipher(operation, text, key):
+    answer = ""
+    for letter in text:
         position = alphabet.index(letter)
-        shifted_position = position + key
+
+        # Short hand if/else
+        shifted_position = operation == "encode" and position + key or position - key
+
         new_letter = alphabet[shifted_position]
-        cipher += new_letter
-
-    return cipher
-
-
-# Method to decrypt the cipher text with key
-def decrypt(cipher, key):
-    message = ""
-
-    for letter in cipher:
-        position = alphabet.index(letter)
-        shifted_position = position - key
-        new_letter = alphabet[shifted_position]
-        message += new_letter
-
-    print(message)
+        answer += new_letter
+    return answer
 
 
-
-decrypt("a", 1)
-
+# Ask to do again
+def goAgain():
+    again = input("Do you want to do another operation? Press 'Yes' to proceed or Anything else to Terminate the app").upper()
+    if(again == "YES"):
+        operation = input("Enter 'encode' to encrypt or 'decode' to decrypt or 'exit' to terminate: ")
+    else:
+        terminate = True
