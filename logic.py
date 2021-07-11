@@ -8,12 +8,15 @@ def caesar_cipher(operation, text, key):
     if operation == 'decode':
         key *= -1
 
-    for letter in text:
-        position = alphabet.index(letter)
-        shifted_position =  position + key 
+    for character in text:
+        if character in alphabet:
+            position = alphabet.index(character)
+            shifted_position =  position + key 
 
-        new_letter = alphabet[shifted_position]
-        answer += new_letter
+            new_letter = alphabet[shifted_position]
+            answer += new_letter
+        else:
+            answer += character
     print(f"The {operation}d text is '{answer}'")
 
 
