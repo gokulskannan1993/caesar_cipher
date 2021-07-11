@@ -4,12 +4,12 @@ from resources import clear, logo
 
 
 
-# Asking for user input on operation
+# Asking for user input 
 clear()
 print(logo)
 operation = input("Enter 'encode' to encrypt or 'decode' to decrypt: ")
 text = input("Enter the message: ").lower()
-key = int(input("Enter the shift number:"))
+key = int(input("Enter the shift number:")) % 26
 
 
 # Switch operations according to User input 
